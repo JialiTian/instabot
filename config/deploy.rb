@@ -1,41 +1,54 @@
-require 'bundler/capistrano'
-set :rvm_ruby_string, '2.1.6'
+require "bundler/capistrano"
 require "rvm/capistrano"
-require 'capistrano-db-tasks'
 
-load "config/recipes/base"
-load "config/recipes/unicorn"
+server "192.241.244.214", :web, :app, :db, primary: true
+
+set :application, "instabot"
+set :user, "deploy"
+set :port, 2206
+set :deploy_to, "/home/#{user}/apps/#{application}"
+set :deploy_via, :remote_cache
+set :use_sudo, false
+
+set :scm, "git"
+set :repository, "git@github.com:JialiTian/#{application}.git"
+set :branch, "master"
+
 
 default_run_options[:pty] = true
-set :application, 'deletecommentbot'
-set :repository,  'git@git.pixelforcesystems.com.au:pixelforce-systems/deletecommentbot.git'
-set :scm, :git
+ssh_options[:forward_agent] = true
 
-set :deploy_to,   '/home/deploy/deletecommentbot'
-set :user,        'deploy'
-set :branch,      'master'
-set :rails_env,   'production'
-set :migrate_env, 'production'
-set :use_sudo, false
-set :deploy_via, :remote_cache
-set :db_local_clean, false
-set :locals_rails_env, "development"
-set :server_address, "deletecommentbot.com.au"
+after "deploy", "deploy:cleanup" # keep only the last 5 releases
 
-server "162.242.218.110", :app, :web, :db, :primary => true
-
-# if you want to clean up old releases on each deploy uncomment this:
-after "deploy:restart", "deploy:cleanup"
-after 'deploy:restart', 'unicorn:restart'
-
-after "bundle:install", :roles => :web do
-  run "ln -s #{shared_path}/config/database.yml #{release_path}/config/database.yml"
-end
-
-# If you are using Passenger mod_rails uncomment this:
 namespace :deploy do
-  task :start do ; end  
-  task :stop do ; end  
-  task :restart, :roles => :app, :except => { :no_release => true } do
+  %w[start stop restart].each do |command|
+    desc "#{command} unicorn server"
+    task command, roles: :app, except: {no_release: true} do
+      run "/etc/init.d/unicorn_#{application} #{command}"
+    end
   end
+
+  task :setup_config, roles: :app do
+    sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/#{application}"
+    sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
+    run "mkdir -p #{shared_path}/config"
+    put File.read("config/database.example.yml"), "#{shared_path}/config/database.yml"
+    puts "Now edit the config files in #{shared_path}."
+  end
+  after "deploy:setup", "deploy:setup_config"
+
+  task :symlink_config, roles: :app do
+    run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+  end
+  after "deploy:finalize_update", "deploy:symlink_config"
+
+  desc "Make sure local git is in sync with remote."
+  task :check_revision, roles: :web do
+    unless `git rev-parse HEAD` == `git rev-parse origin/master`
+      puts "WARNING: HEAD is not the same as origin/master"
+      puts "Run `git push` to sync changes."
+      exit
+    end
+  end
+  before "deploy", "deploy:check_revision"
 end
