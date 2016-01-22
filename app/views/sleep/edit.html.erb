@@ -1,0 +1,27 @@
+<p>
+  <strong>Current Period:</strong>
+  <%= @sleep.period %>
+</p>
+<%= form_for :sleep, url: sleep_path(@sleep), method: :patch do |k| %>
+	<% if @sleep.errors.any? %>
+	 <div id="error_explanation">
+	   <h2>
+	     <%= pluralize(@sleep.errors.count, "error") %> prohibited
+	     this sleep from being saved:
+	   </h2>
+	   <ul>
+	     <% @sleep.errors.full_messages.each do |msg| %>
+	       <li><%= msg %></li>
+	     <% end %>
+	   </ul>
+	 </div>
+	<% end %>
+  <p>
+    <%= k.label :period %><br>
+    <%= k.number_field :period %>
+  </p>
+ 
+  <p>
+    <%= k.submit %>
+  </p>
+<% end %>

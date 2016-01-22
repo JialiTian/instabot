@@ -1,0 +1,35 @@
+<h1>Listing records</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sender</th>
+      <th>Created at</th>
+      <th>Deleted at</th>
+      <th>Keyword</th>
+      <th>Text</th>
+      <th>Comment id</th>
+      <th>Media id</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @records.each do |record| %>
+      <tr>
+        <td><%= record.sender %></td>
+        <td><%= record.time %></td>
+        <td><%= record.created_at.strftime("%d/%m/%Y %H:%M") %></td>
+        <td><%= record.keyword %></td>
+        <td><%= record.text %></td>
+        <td><%= record.commentid %></td>
+        <td><%= record.mediaid %></td>
+        <td><%= link_to 'Show', record %></td>
+        <td><%= link_to 'Destroy', record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

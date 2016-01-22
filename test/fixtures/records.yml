@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sender: MyString
+  time: MyString
+  keyword: MyString
+  text: MyString
+  commentid: 1
+  mediaid: 1
+
+two:
+  sender: MyString
+  time: MyString
+  keyword: MyString
+  text: MyString
+  commentid: 1
+  mediaid: 1

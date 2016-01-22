@@ -1,0 +1,300 @@
+
+
+Started GET "/" for 127.0.0.1 at 2016-01-22 20:20:27 +1030
+
+ActiveRecord::NoDatabaseError (FATAL:  database "kayla_bot_development" does not exist
+Run `$ bin/rake db:create db:migrate` to create your database):
+  activerecord (4.1.13) lib/active_record/connection_adapters/postgresql_adapter.rb:898:in `rescue in connect'
+  activerecord (4.1.13) lib/active_record/connection_adapters/postgresql_adapter.rb:888:in `connect'
+  activerecord (4.1.13) lib/active_record/connection_adapters/postgresql_adapter.rb:568:in `initialize'
+  activerecord (4.1.13) lib/active_record/connection_adapters/postgresql_adapter.rb:41:in `new'
+  activerecord (4.1.13) lib/active_record/connection_adapters/postgresql_adapter.rb:41:in `postgresql_connection'
+  activerecord (4.1.13) lib/active_record/connection_adapters/abstract/connection_pool.rb:435:in `new_connection'
+  activerecord (4.1.13) lib/active_record/connection_adapters/abstract/connection_pool.rb:445:in `checkout_new_connection'
+  activerecord (4.1.13) lib/active_record/connection_adapters/abstract/connection_pool.rb:416:in `acquire_connection'
+  activerecord (4.1.13) lib/active_record/connection_adapters/abstract/connection_pool.rb:351:in `block in checkout'
+  /Users/wangxi/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/monitor.rb:214:in `mon_synchronize'
+  activerecord (4.1.13) lib/active_record/connection_adapters/abstract/connection_pool.rb:350:in `checkout'
+  activerecord (4.1.13) lib/active_record/connection_adapters/abstract/connection_pool.rb:265:in `block in connection'
+  /Users/wangxi/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/monitor.rb:214:in `mon_synchronize'
+  activerecord (4.1.13) lib/active_record/connection_adapters/abstract/connection_pool.rb:264:in `connection'
+  activerecord (4.1.13) lib/active_record/connection_adapters/abstract/connection_pool.rb:541:in `retrieve_connection'
+  activerecord (4.1.13) lib/active_record/connection_handling.rb:113:in `retrieve_connection'
+  activerecord (4.1.13) lib/active_record/connection_handling.rb:87:in `connection'
+  activerecord (4.1.13) lib/active_record/migration.rb:388:in `check_pending!'
+  activerecord (4.1.13) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.1.13) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.13) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.13) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.13) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.13) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.13) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.13) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.13) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.13) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.13) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.13) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.13) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.13) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.13) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.13) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.13) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.13) lib/rails/engine.rb:514:in `call'
+  railties (4.1.13) lib/rails/application.rb:144:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/wangxi/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/wangxi/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/wangxi/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/wangxi/.rvm/gems/ruby-2.3.0/gems/actionpack-4.1.13/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/wangxi/.rvm/gems/ruby-2.3.0/gems/actionpack-4.1.13/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/wangxi/.rvm/gems/ruby-2.3.0/gems/actionpack-4.1.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/wangxi/.rvm/gems/ruby-2.3.0/gems/actionpack-4.1.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (52.8ms)
+  [1m[36m (31.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (2.8ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateKeywords (20160106053002)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (23.9ms)[0m  [1mCREATE TABLE "keywords" ("id" serial primary key, "text" text, "createTime" date, "lastUpdate" date, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (6.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160106053002"]]
+  [1m[36m (6.2ms)[0m  [1mCOMMIT[0m
+Migrating to CreateUsers (20160113054139)
+  [1m[35m (6.1ms)[0m  BEGIN
+  [1m[36m (14.9ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "first_name" character varying(255), "last_name" character varying(255), "email" character varying(255), "password_digest" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (4.8ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160113054139"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateSleeps (20160114234340)
+  [1m[35m (6.1ms)[0m  BEGIN
+  [1m[36m (7.8ms)[0m  [1mCREATE TABLE "sleeps" ("id" serial primary key, "period" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160114234340"]]
+  [1m[36m (6.1ms)[0m  [1mCOMMIT[0m
+Migrating to CreateRecords (20160115025231)
+  [1m[35m (6.1ms)[0m  BEGIN
+  [1m[36m (14.0ms)[0m  [1mCREATE TABLE "records" ("id" serial primary key, "sender" character varying(255), "time" character varying(255), "keyword" character varying(255), "text" character varying(255), "commentid" integer, "mediaid" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20160115025231"]]
+  [1m[36m (5.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2016-01-22 20:21:28 +1030
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by KeywordsController#index as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 11ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-01-22 20:21:28 +1030
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 1802ms (Views: 1801.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-01-22 20:21:30 +1030
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-01-22 20:21:30 +1030
+
+
+Started GET "/assets/keywords.css?body=1" for 127.0.0.1 at 2016-01-22 20:21:30 +1030
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2016-01-22 20:21:30 +1030
+
+
+Started GET "/assets/records.css?body=1" for 127.0.0.1 at 2016-01-22 20:21:30 +1030
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2016-01-22 20:21:30 +1030
+
+
+Started GET "/assets/sleep.css?body=1" for 127.0.0.1 at 2016-01-22 20:21:30 +1030
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-01-22 20:21:30 +1030
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-01-22 20:21:30 +1030
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-01-22 20:21:30 +1030
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-01-22 20:21:30 +1030
+
+
+Started GET "/assets/keywords.js?body=1" for 127.0.0.1 at 2016-01-22 20:21:30 +1030
+
+
+Started GET "/assets/records.js?body=1" for 127.0.0.1 at 2016-01-22 20:21:30 +1030
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2016-01-22 20:21:30 +1030
+
+
+Started GET "/assets/sleep.js?body=1" for 127.0.0.1 at 2016-01-22 20:21:30 +1030
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2016-01-22 20:21:30 +1030
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-01-22 20:21:30 +1030
+
+
+Started GET "/login" for 127.0.0.1 at 2016-01-22 20:21:36 +1030
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 79ms (Views: 79.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-01-22 20:21:36 +1030
+Processing by KeywordsController#index as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-01-22 20:21:36 +1030
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 67ms (Views: 66.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sleep/1" for 127.0.0.1 at 2016-01-22 20:21:37 +1030
+Processing by SleepController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSleep Load (12.2ms)[0m  SELECT  "sleeps".* FROM "sleeps"   ORDER BY "sleeps"."id" ASC LIMIT 1
+  Rendered sleep/show.html.erb within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 13.4ms)
+
+ActionView::Template::Error (undefined method `period' for nil:NilClass):
+    1: <p>
+    2:   <strong>Perioid:</strong>
+    3:   <%= @sleep.period %>
+    4: </p>
+  app/views/sleep/show.html.erb:3:in `_app_views_sleep_show_html_erb___857964129980891724_70100069116020'
+
+
+  Rendered /Users/wangxi/.rvm/gems/ruby-2.3.0/gems/actionpack-4.1.13/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/wangxi/.rvm/gems/ruby-2.3.0/gems/actionpack-4.1.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/wangxi/.rvm/gems/ruby-2.3.0/gems/actionpack-4.1.13/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (33.3ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2016-01-22 20:21:37 +1030
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 68ms (Views: 63.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2016-01-22 20:21:38 +1030
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 77ms (Views: 75.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-01-22 20:21:49 +1030
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"h0RT14eOu31sczPouiWGvu9VEKGaxb2QJ2x+OT3nAQE=", "user"=>{"first_name"=>"Jaili", "last_name"=>"Tian", "email"=>"jialitian@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Create an account"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (24.4ms)[0m  INSERT INTO "users" ("created_at", "email", "first_name", "last_name", "password_digest", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["created_at", "2016-01-22 09:51:49.729517"], ["email", "jialitian@gmail.com"], ["first_name", "Jaili"], ["last_name", "Tian"], ["password_digest", "$2a$10$nvsvzcXmISYocfNEswiHVOS8qE374WcaNhtrWD1GI4KuiC2mi59pG"], ["updated_at", "2016-01-22 09:51:49.729517"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 112ms (ActiveRecord: 25.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-01-22 20:21:49 +1030
+Processing by KeywordsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mKeyword Load (2.1ms)[0m  [1mSELECT "keywords".* FROM "keywords"[0m
+  [1m[35mSleep Load (0.2ms)[0m  SELECT  "sleeps".* FROM "sleeps"   ORDER BY "sleeps"."id" ASC LIMIT 1
+  Rendered keywords/index.html.erb within layouts/application (5.3ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 2.6ms)
+
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"sleep", :id=>nil} missing required keys: [:id]):
+    26: <br>
+    27: <a class = "btn-submit" href='/keywords/new'>Add new keyword</a>
+    28: 
+    29: <%= link_to "Edit Sleep Period", edit_sleep_path(Sleep.first), class: "btn-submit"%>
+    30: 
+    31: <a class = "btn-submit" href='/records'>History</a>
+  app/views/keywords/index.html.erb:29:in `_app_views_keywords_index_html_erb___327964327526826124_70100103201360'
+
+
+  Rendered /Users/wangxi/.rvm/gems/ruby-2.3.0/gems/actionpack-4.1.13/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/wangxi/.rvm/gems/ruby-2.3.0/gems/actionpack-4.1.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/wangxi/.rvm/gems/ruby-2.3.0/gems/actionpack-4.1.13/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (34.5ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started POST "/users" for 127.0.0.1 at 2016-01-22 20:24:11 +1030
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"h0RT14eOu31sczPouiWGvu9VEKGaxb2QJ2x+OT3nAQE=", "user"=>{"first_name"=>"Jaili", "last_name"=>"Tian", "email"=>"jialitian@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Create an account"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "first_name", "last_name", "password_digest", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2016-01-22 09:54:11.747583"], ["email", "jialitian@gmail.com"], ["first_name", "Jaili"], ["last_name", "Tian"], ["password_digest", "$2a$10$IDqwIkLZld1FB3Hr6Hf5OOluGZEgOq/.iiBlZ5ezw5EUTuWKDXr4u"], ["updated_at", "2016-01-22 09:54:11.747583"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 98ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-01-22 20:24:11 +1030
+Processing by KeywordsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mKeyword Load (0.4ms)[0m  SELECT "keywords".* FROM "keywords"
+  [1m[36mSleep Load (0.6ms)[0m  [1mSELECT  "sleeps".* FROM "sleeps"   ORDER BY "sleeps"."id" ASC LIMIT 1[0m
+  Rendered keywords/index.html.erb within layouts/application (9.3ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 2.4ms)
+
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"sleep", :id=>nil} missing required keys: [:id]):
+    26: <br>
+    27: <a class = "btn-submit" href='/keywords/new'>Add new keyword</a>
+    28: 
+    29: <%= link_to "Edit Sleep Period", edit_sleep_path(Sleep.first), class: "btn-submit"%>
+    30: 
+    31: <a class = "btn-submit" href='/records'>History</a>
+  app/views/keywords/index.html.erb:29:in `_app_views_keywords_index_html_erb__909913963310121452_70190992500440'
+
+
+  Rendered /Users/wangxi/.rvm/gems/ruby-2.3.0/gems/actionpack-4.1.13/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/wangxi/.rvm/gems/ruby-2.3.0/gems/actionpack-4.1.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/wangxi/.rvm/gems/ruby-2.3.0/gems/actionpack-4.1.13/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (31.8ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "sleeps"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (7.2ms)[0m  [1mINSERT INTO "sleeps" ("created_at", "period", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2016-01-22 09:55:14.723849"], ["period", 20], ["updated_at", "2016-01-22 09:55:14.723849"]]
+  [1m[35m (6.6ms)[0m  COMMIT
+
+
+Started POST "/users" for 127.0.0.1 at 2016-01-22 20:25:45 +1030
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"h0RT14eOu31sczPouiWGvu9VEKGaxb2QJ2x+OT3nAQE=", "user"=>{"first_name"=>"Jaili", "last_name"=>"Tian", "email"=>"jialitian@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Create an account"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "first_name", "last_name", "password_digest", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2016-01-22 09:55:45.926775"], ["email", "jialitian@gmail.com"], ["first_name", "Jaili"], ["last_name", "Tian"], ["password_digest", "$2a$10$CBnBMq468MPJsbXKfyk3zut7vzKZYKQZeio2QOuWNJrFVbQ5.eVJi"], ["updated_at", "2016-01-22 09:55:45.926775"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 104ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-01-22 20:25:45 +1030
+Processing by KeywordsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mKeyword Load (0.4ms)[0m  SELECT "keywords".* FROM "keywords"
+  [1m[36mSleep Load (0.5ms)[0m  [1mSELECT  "sleeps".* FROM "sleeps"   ORDER BY "sleeps"."id" ASC LIMIT 1[0m
+  Rendered keywords/index.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 145ms (Views: 137.1ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-01-22 20:25:46 +1030
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-01-22 20:25:46 +1030

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sender:</strong>
+  <%= @record.sender %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @record.time %>
+</p>
+
+<p>
+  <strong>Keyword:</strong>
+  <%= @record.keyword %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @record.text %>
+</p>
+
+<p>
+  <strong>Commentid:</strong>
+  <%= @record.commentid %>
+</p>
+
+<p>
+  <strong>Mediaid:</strong>
+  <%= @record.mediaid %>
+</p>
+
+<%= link_to 'Edit', edit_record_path(@record) %> |
+<%= link_to 'Back', records_path %>

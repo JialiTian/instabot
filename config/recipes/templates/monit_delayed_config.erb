@@ -1,0 +1,4 @@
+check process <%= application %>_delayed_job with pidfile /home/deploy/<%= application %>/shared/pids/delayed_job.pid
+  start program = "/etc/init.d/<%= application %>_delayed start" with timeout 90 seconds
+  stop program = "/etc/init.d/<%= application %>_delayed stop"
+  if totalmem > 800.0 MB for 10 cycles then restart

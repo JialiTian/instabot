@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link href="http://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,300' rel='stylesheet' type='text/css'>
+    <title>Comment Remove Robot</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+
+    <div class="header">
+      <div class="container">
+        <%= link_to root_path do %>
+          <img src="https://www.pixelforce.com.au/assets/logo-icon-8db5708e588bdf79d82a1b61506b3a57.png" width="80" height="80"> Comment Remove Robot
+        <% end %>
+
+        <div class="nav pull-right">
+					<% if current_user %> 
+					  <ul> 
+					    <li><%= current_user.email %></li> 
+					    <li><%= link_to "Log out", logout_path, method: "delete" %></li> 
+					  </ul> 
+					<% end %>
+          
+        </div>
+      </div>
+    </div>
+
+    <%= yield %>
+
+  </body>
+</html>
