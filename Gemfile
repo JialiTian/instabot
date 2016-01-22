@@ -38,7 +38,7 @@ gem 'unicorn'
 #   gem "capistrano-db-tasks", require: false, github: 'gkopylov/capistrano-db-tasks', ref: 'f3949cd'
 # end
 gem 'capistrano'
-gem 'rvm-capistrano'
+gem 'rvm-capistrano', require:false
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
