@@ -4,5 +4,6 @@ class CreateSleeps < ActiveRecord::Migration
       t.integer :period
       t.timestamps
     end
+    Sleep.create period: 20
   end 
 end
